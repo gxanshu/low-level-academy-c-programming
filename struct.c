@@ -3,7 +3,7 @@
 
 #define MAX_EMPLOYEE 100
 
-struct Employee_t {
+struct __attribute__((__packed__)) Employee_t {
     int id;
     float income;
     bool is_manager;
@@ -11,6 +11,8 @@ struct Employee_t {
 
 int main() {
     struct Employee_t employees[MAX_EMPLOYEE];
+
+    printf("size of employee struct %d\n", sizeof(struct Employee_t));
 
     int i = 0;
     for (i = 0; i < MAX_EMPLOYEE; i++) {
